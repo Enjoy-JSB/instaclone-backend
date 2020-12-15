@@ -1,20 +1,12 @@
-const {
-  prisma
-} = require("../../../../generated/prisma-client");
+const { prisma } = require("../../../../generated/prisma-client");
 
 export default {
   Query: {
-    seeFeed: async (_, __, {
-      request,
-      isAuthenticated
-    }) => {
+    seeFeed: async (_, __, { request, isAuthenticated }) => {
       isAuthenticated(request);
-      const {
-        user
-      } = request;
-      const following = await prisma.user({
-        id: user.id
-      }).following();
+      const { user } = request;
+      const following = await prisma.user({ id: user.id }).following();
+
       return prisma.posts({
         where: {
           user: {
