@@ -4,8 +4,8 @@
   "description": "Clone Instagram",
   "main": "index.js",
   "scripts": {
-    "deploy": "prisma deploy",
-    "generate": "prisma generate",
+    "deploy": "npx prisma deploy",
+    "generate": "npx prisma generate",
     "prisma": "yarn run deploy && yarn run generate",
     "dev": "nodemon --exec babel-node src/server.js",
     "prebuild": "yarn run prisma",
