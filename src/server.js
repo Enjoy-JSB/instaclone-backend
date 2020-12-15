@@ -1,8 +1,6 @@
-import { prisma } from "../generated/prisma-client";
 import "./env";
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
-import passport from "passport";
 import schema from "./shcema";
 import "./passport";
 import { authenticateJwt } from "./passport";
